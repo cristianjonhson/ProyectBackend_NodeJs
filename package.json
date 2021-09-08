@@ -1,0 +1,20 @@
+{
+  "name": "proyectbackend-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristianjonhson/ProyectBackend_NodeJs.git"
+  },
+  "keywords": [],
+  "author": "Cristian Jonhson Alvarez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cristianjonhson/ProyectBackend_NodeJs/issues"
+  },
+  "homepage": "https://github.com/cristianjonhson/ProyectBackend_NodeJs#readme"
+}
