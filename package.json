@@ -17,6 +17,9 @@
     "url": "https://github.com/cristianjonhson/ProyectBackend_NodeJs/issues"
   },
   "homepage": "https://github.com/cristianjonhson/ProyectBackend_NodeJs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {
     "nodemon": "^2.0.12"
   },
