@@ -1,7 +1,9 @@
 const express = require('express')
 const app = express()
 
-app.listen(3000, ()=>{
-   console.log('hello world')
-})
+app.set('port', 3000)
+
+app.listen(app.get('port'), ()=>{
+   console.log(`App listening at http://localhost:${app.get('port')}`)
+});
 
