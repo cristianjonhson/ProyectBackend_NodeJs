@@ -1,7 +1,9 @@
 const express = require('express')
+const axios= require('axios');
+
 const app = express()
 
-app.set('port', 3000)
+app.set('port', 3000);
 
 app.get('/', (req, res)=>{
    res.send('Hola mundo')
