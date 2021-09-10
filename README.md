@@ -39,7 +39,6 @@ _Descargando en un archivo comprimido Zip o bien clonando desde su IDE favorito.
 _Ya clonado el proyecto. Abrir el proyecto en una terminal y ejecutar lo siguiente:_
 
 ```
-
 npm install
 
 npm run dev
