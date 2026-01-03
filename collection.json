@@ -1,0 +1,57 @@
+{
+  "info": {
+    "name": "ProyectBackend NodeJs API",
+    "description": "Colección de endpoints para el backend desarrollado con Node.js y Express que consulta información de puntos de recogida desde la API de AllRide",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "proyectbackend-nodejs"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            ""
+          ]
+        },
+        "description": "Endpoint de prueba que devuelve un mensaje de bienvenida para verificar que el servidor está funcionando correctamente."
+      },
+      "response": []
+    },
+    {
+      "name": "Get AllRide Points",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/server",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "server"
+          ]
+        },
+        "description": "Realiza una petición a la API externa de AllRide para obtener información de puntos de recogida. La autenticación con Bearer Token se maneja internamente en el servidor."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
