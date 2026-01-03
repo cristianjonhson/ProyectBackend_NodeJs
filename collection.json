@@ -1,7 +1,7 @@
 {
   "info": {
     "name": "ProyectBackend NodeJs API",
-    "description": "Colección de endpoints para el backend desarrollado con Node.js y Express que consulta información de puntos de recogida desde la API de AllRide",
+    "description": "Colección de endpoints para el backend desarrollado con Node.js y Express que consulta información de usuarios y posts desde la API pública JSONPlaceholder",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "proyectbackend-nodejs"
   },
@@ -27,22 +27,63 @@
       "response": []
     },
     {
-      "name": "Get AllRide Points",
+      "name": "Get All Users",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/server",
+          "raw": "http://localhost:3000/users",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "3000",
           "path": [
-            "server"
+            "users"
           ]
         },
-        "description": "Realiza una petición a la API externa de AllRide para obtener información de puntos de recogida. La autenticación con Bearer Token se maneja internamente en el servidor."
+        "description": "Obtiene la lista completa de usuarios desde la API pública JSONPlaceholder."
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Posts",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/posts",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts"
+          ]
+        },
+        "description": "Obtiene todas las publicaciones disponibles desde la API pública JSONPlaceholder."
+      },
+      "response": []
+    },
+    {
+      "name": "Get Post by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/posts/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts",
+            "1"
+          ]
+        },
+        "description": "Obtiene una publicación específica por su ID. Cambia el ID en la URL para obtener diferentes posts."
       },
       "response": []
     }

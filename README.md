@@ -1,18 +1,19 @@
 # ProyectBackend_NodeJs
 
-Backend API desarrollado con Node.js y Express que proporciona servicios para consultar información de puntos de recogida desde la API de AllRide. Este proyecto fue desarrollado como desafío técnico para el proceso de selección al cargo de Desarrollador Backend - Septiembre 2021.
+Backend API desarrollado con Node.js y Express que proporciona servicios RESTful para consultar información de usuarios y posts desde la API pública JSONPlaceholder. Este proyecto fue desarrollado como desafío técnico para el proceso de selección al cargo de Desarrollador Backend - Septiembre 2021.
 
 ## 📋 Descripción
 
-Este proyecto es una aplicación backend construida con Node.js que actúa como intermediario entre un cliente y la API externa de AllRide. Proporciona endpoints para consultar datos de puntos de recogida con autenticación mediante Bearer Token.
+Este proyecto es una aplicación backend construida con Node.js que actúa como intermediario entre un cliente y la API pública JSONPlaceholder. Proporciona endpoints para consultar datos de usuarios y publicaciones con manejo de errores y respuestas JSON estructuradas.
 
 ### Características principales
 
 - API REST con Express.js
-- Integración con API externa de AllRide
+- Integración con API pública JSONPlaceholder
 - Soporte CORS para peticiones cross-origin
 - Desarrollo con hot-reload mediante Nodemon
-- Peticiones HTTP con Axios y Request
+- Peticiones HTTP con Axios
+- Manejo de errores robusto
 
 ## 🚀 Tecnologías
 
@@ -95,12 +96,53 @@ Endpoint de prueba que devuelve un mensaje de bienvenida.
 Hola mundo
 ```
 
-### `GET /server`
-Realiza una petición a la API externa de AllRide para obtener información de puntos de recogida.
+### `GET /users`
+Obtiene la lista completa de usuarios desde JSONPlaceholder.
 
-**Headers requeridos:** Ninguno (la autenticación se maneja internamente)
+**Respuesta:** Array con todos los usuarios (ID, nombre, email, etc.)
 
-**Respuesta:** Datos de puntos de recogida desde la API de AllRide
+**Ejemplo de respuesta:**
+```json
+[
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    ...
+  }
+]
+```
+
+### `GET /posts`
+Obtiene todas las publicaciones disponibles.
+
+**Respuesta:** Array con todas las publicaciones
+
+**Ejemplo de respuesta:**
+```json
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident",
+    "body": "quia et suscipit..."
+  }
+]
+```
+
+### `GET /posts/:id`
+Obtiene una publicación específica por su ID.
+
+**Parámetros:**
+- `id` (number) - ID de la publicación
+
+**Respuesta:** Objeto con los datos de la publicación
+
+**Ejemplo:**
+```bash
+GET /posts/1
+```
 
 ## 🧪 Pruebas con Postman
 
@@ -113,7 +155,9 @@ El proyecto incluye una colección de Postman (`collection.json`) lista para imp
 3. Selecciona el archivo `collection.json` del proyecto
 4. La colección se importará con los siguientes endpoints:
    - **Health Check** - GET /
-   - **Get AllRide Points** - GET /server
+   - **Get All Users** - GET /users
+   - **Get All Posts** - GET /posts
+   - **Get Post by ID** - GET /posts/:id
 
 ### Ejecutar las pruebas
 
@@ -130,8 +174,7 @@ Actualmente, el token de autenticación está hardcodeado en el código. Para un
 
 ```env
 PORT=3000
-ALLRIDE_API_URL=https://stage.allrideapp.com/ext/api/v1/recruiting/points
-ALLRIDE_BEARER_TOKEN=tu_token_aqui
+API_BASE_URL=https://jsonplaceholder.typicode.com
 ```
 
 3. Instalar `dotenv`:

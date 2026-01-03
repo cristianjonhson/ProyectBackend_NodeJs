@@ -1,7 +1,7 @@
 {
   "name": "proyectbackend-nodejs",
   "version": "1.0.0",
-  "description": "Backend API desarrollado con Node.js y Express que proporciona servicios para consultar información de puntos de recogida desde la API de AllRide",
+  "description": "Backend API desarrollado con Node.js y Express que proporciona servicios RESTful para consultar información de usuarios y posts desde la API pública JSONPlaceholder",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./index.js"

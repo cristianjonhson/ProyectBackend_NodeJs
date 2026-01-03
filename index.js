@@ -14,20 +14,36 @@ app.get('/', (req, res)=>{
    res.send('Hola mundo')
 })
 
-app.get('/server',(req, res) =>{
-   request({
-      url: 'https://stage.allrideapp.com/ext/api/v1/recruiting/points',
-      headers: {
-         "Authorization": "Bearer 250bd75493c59e8146798e43fff8370893b1bd76052533a7428a4e182eddd8b4fd1eed201dbfdd19491b0595cd9b2acda44fc47fff0f0e28d5fe17c662ace665"
-      }  
-    }, function(err, res) {
-          if(err) {
-            console.error(err);
-          } else {
-            console.log(res.body);
-          }
-    });
-}) 
+app.get('/users', async (req, res) => {
+   try {
+      const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+      res.json(response.data);
+   } catch (error) {
+      console.error('Error al obtener usuarios:', error.message);
+      res.status(500).json({ error: 'Error al obtener datos de la API' });
+   }
+});
+
+app.get('/posts', async (req, res) => {
+   try {
+      const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+      res.json(response.data);
+   } catch (error) {
+      console.error('Error al obtener posts:', error.message);
+      res.status(500).json({ error: 'Error al obtener datos de la API' });
+   }
+});
+
+app.get('/posts/:id', async (req, res) => {
+   try {
+      const { id } = req.params;
+      const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
+      res.json(response.data);
+   } catch (error) {
+      console.error('Error al obtener el post:', error.message);
+      res.status(404).json({ error: 'Post no encontrado' });
+   }
+}); 
 
 
 
