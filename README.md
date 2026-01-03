@@ -32,9 +32,10 @@ El proyecto está desarrollado con las siguientes tecnologías:
 ```
 ProyectBackend_NodeJs/
 │
-├── index.js              # Archivo principal del servidor
-├── package.json          # Dependencias y configuración del proyecto
-├── package-lock.json     # Versiones exactas de dependencias
+├── .gitignore           # Archivos y directorios ignorados por Git
+├── collection.json      # Colección de Postman para pruebas de API
+├── index.js             # Archivo principal del servidor
+├── package.json         # Dependencias y configuración del proyecto
 └── README.md            # Documentación del proyecto
 ```
 
@@ -101,6 +102,23 @@ Realiza una petición a la API externa de AllRide para obtener información de p
 
 **Respuesta:** Datos de puntos de recogida desde la API de AllRide
 
+## 🧪 Pruebas con Postman
+
+El proyecto incluye una colección de Postman (`collection.json`) lista para importar y probar la API.
+
+### Importar la colección
+
+1. Abre Postman
+2. Click en **"Import"**
+3. Selecciona el archivo `collection.json` del proyecto
+4. La colección se importará con los siguientes endpoints:
+   - **Health Check** - GET /
+   - **Get AllRide Points** - GET /server
+
+### Ejecutar las pruebas
+
+Asegúrate de que el servidor esté ejecutándose (`npm run dev`) antes de realizar las peticiones en Postman.
+
 ## 🔐 Configuración
 
 ### Variables de Entorno
@@ -122,6 +140,16 @@ npm install dotenv
 ```
 
 4. Modificar `index.js` para usar variables de entorno
+
+### .gitignore
+
+El proyecto incluye un archivo `.gitignore` configurado para excluir:
+- `node_modules/` - Dependencias instaladas
+- `package-lock.json` - Archivo de lock (se genera automáticamente)
+- Archivos de logs y temporales
+- Variables de entorno (`.env`)
+- Configuraciones de IDEs
+- Archivos específicos del sistema operativo
 
 ## 🛠️ Mejoras Sugeridas
 
